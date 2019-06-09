@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matematyka w JS</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+
+<body>
+    
+    <script>
+        
+    document.write(0.1 * 5); document.write("<br />");
+    document.write(0.15 * 3); document.write("<br />");
+    document.write(0.1 + 0.2); document.write("<br />");
+    document.write(Math.pow(2,53)); document.write("<br />");
+    document.write(Math.pow(2,53)*Math.pow(2,53)); document.write("<br />");
+        
+        if(0.1 + 0.2 == 0.3) document.write("true<br />");
+        else document.write("false<br />");
+        
+         var x;
+        x = Math.round((0.1 + 0.2)*10) / 10;
+        document.write(x+"<br />");   
+        
+        x = Math.round((0.15 *3)*100) / 100;
+        document.write(x+"<br />");   
+        
+        x = 0.15 * 3;
+        x = x.toFixed(2);
+        document.write(x+"<br /><br />");
+        
+        y = 1.005;
+        y = y.toFixed(2);
+        document.write(y+"<br /><br />");
+        
+        z = 1.005;
+        z = Math.round((z*1000) / 1000);
+        document.write(z+"<br />");
+                       
+                       
+        Number.prototype.round = function(miejsc) {
+            return + (Math.round(this+"e+"+miejsc) + "e-" + miejsc);
+        }
+        y = 1.005;
+        y = y.round(2); //używamy prototypu round zamiast toFixed
+         document.write(y+"<br /><br /><br /><br /><hr>");
+        
+        //portfel internetowy Płać pan
+         
+        document.write("PŁAĆ PAN.!<br /><br /><br />");
+        
+        
+    var pln = 1000;
+     document.write("wpłata " + pln + " PLN <br /><br />"); 
+        
+    
+        // przewalutowanie
+    var usd = pln / 4.00835701;
+    document.write("Saldo " + usd + "   USD <br />");
+        
+        usd = Math.floor(usd * 100) / 100;
+        document.write("Saldo " + usd + " USD <br /><br />");
+      
+        
+    //zakupy
+        var zakupy = 23.99
+         document.write("Zakupy " + zakupy + " USD <br />");
+        
+        var prowizja = 0.02 * zakupy;
+        document.write("Prowizja " + prowizja + " USD <br />");
+       
+        prowizja = Math.ceil(prowizja * 100) / 100;
+        document.write("Prowizja " + prowizja + " USD <br />")
+        
+        //po zakupach
+        usd = usd - zakupy - prowizja;
+        document.write("Saldo " + usd + " USD <br />")
+        
+        usd = 224.99;
+        usd = Math.trunc(usd);
+        document.write("Saldo " + usd + " USD <br />")
+        
+        
+    
+    </script>
+    
+</body>
+</html>
